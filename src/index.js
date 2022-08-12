@@ -1,6 +1,24 @@
+module.exports = function towelSort (matrix) { 
+   let p;
 
-// You should implement your task here.
+   if (!Array.isArray(matrix) || matrix.length === 0) {
+    return [];
+   }
+  
+  const mat= matrix.map((el, k) =>{
 
-module.exports = function towelSort (matrix) {
-  return [];
+    if(k%2 === 0){
+      p = el;
+    }
+    else {
+      p = el.reverse();
+    }
+
+  return p;
+});
+
+ return mat.flat();
 }
+ 
+
+
